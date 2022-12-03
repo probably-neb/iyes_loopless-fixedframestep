@@ -13,11 +13,12 @@ exclude = ["assets"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = [ "fixedtimestep", "states", "bevy-compat", "app" ]
+default = [ "fixedtimestep", "fixedframestep", "states", "bevy-compat", "app" ]
 fixedtimestep = [
     "bevy_time",
     "bevy_utils",
 ]
+fixedframestep = []
 states = [
     "bevy_utils",
 ]

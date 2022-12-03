@@ -12,6 +12,8 @@
 pub mod condition;
 #[cfg(feature = "fixedtimestep")]
 pub mod fixedtimestep;
+#[cfg(feature = "fixedframestep")]
+pub mod fixedframestep;
 #[cfg(feature = "states")]
 pub mod state;
 
@@ -25,6 +27,13 @@ pub mod prelude {
     pub use crate::fixedtimestep::schedule::ScheduleLooplessFixedTimestepExt;
     #[cfg(all(feature = "fixedtimestep", feature = "app"))]
     pub use crate::fixedtimestep::app::AppLooplessFixedTimestepExt;
+
+    #[cfg(feature = "fixedframestep")]
+    pub use crate::fixedframestep::{FixedFramesteps, FixedFramestepStage};
+    #[cfg(feature = "fixedframestep")]
+    pub use crate::fixedframestep::schedule::ScheduleLooplessFixedFramestepExt;
+    #[cfg(all(feature = "fixedframestep", feature = "app"))]
+    pub use crate::fixedframestep::app::AppLooplessFixedFramestepExt;
 
     #[cfg(feature = "states")]
     pub use crate::state::{CurrentState, NextState, StateTransitionStage};
